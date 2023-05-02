@@ -23,4 +23,7 @@ set outPath=%~dp0\package\lib
   %~dp0\tools\NStrip.exe "%managedPath%\%%a" -o "%outPath%\%%a" -cg -p --cg-exclude-events
 ))
 
+@REM Delete Burst since it is unused and conflicts with useful mod assemblies
+del "%outPath%\Unity.Burst.*"
+
 pause
