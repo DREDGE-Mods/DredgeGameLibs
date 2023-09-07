@@ -26,4 +26,9 @@ set outPath=%~dp0\package\lib
 @REM Delete Burst since it is unused and conflicts with useful mod assemblies
 del "%outPath%\Unity.Burst.*"
 
+@REM Delete System.x, netstandard, and mscorlib dlls since they cause duplicate references (.netframework dev pack)
+del "%outPath%\System.*"
+del "%outPath%\mscorlib.dll"
+del "%outPath%\netstandard.dll"
+
 pause
